@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>High-Multiplicity Fair Allocation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="main-title">
+            <h1>High-Multiplicity Fair Allocation Made More Practical</h1>
+        </header>
+        <hr>
+
+        <section class="instructions">
+            <h2>How to build the input</h2>
+            <p>
+                Some quick instructions on how to build the input for the algorithm.
+            </p>
+            <h3>Agent Capacities</h3>
+            <p>
+                Agent capacities represent the maximum number of items each agent can be allocated.
+            </p>
+            <h3>Item Capacities</h3>
+            <p>
+                Item capacities represent the maximum number of times each item can be allocated.
+            </p>
+            <h3>Valuations</h3>
+            <p>
+                Valuations represent how much each agent values each item.
+            </p>
+            <hr>
+            <p>
+                The capacities and valuations must be formatted as dictionaries. <br>
+                For example, <br>
+                agent capacities: {"Ami": 2, "Tami": 2, "Rami": 2} <br>
+                Item capacities: {"Fork": 2, "Knife": 2, "Pen": 2} <br>
+                Valuations: {"Ami": {"Fork": 2, "Knife": 0, "Pen": 0}, "Rami": {"Fork": 0, "Knife": 1, "Pen": 1}, "Tami": {"Fork": 0, "Knife": 1, "Pen": 1}}
+
+                <br><br>
+                You can also try some complex examples like: <br>
+                agent_capacities = {'s1': 6, 's2': 6, 's3': 6, 's4': 6} <br>
+                item_capacities = {'c1': 5, 'c2': 6, 'c3': 2, 'c4': 3, 'c5': 5, 'c6': 2} <br>
+                valuations = { <br>
+                     's1': {'c1': 152, 'c2': 86, 'c3': 262, 'c4': 68, 'c5': 263, 'c6': 169}, <br>
+                     's2': {'c1': 124, 'c2': 70, 'c3': 98, 'c4': 244, 'c5': 329, 'c6': 135}, <br>
+                     's3': {'c1': 170, 'c2': 235, 'c3': 295, 'c4': 91, 'c5': 91, 'c6': 118}, <br>
+                     's4': {'c1': 158, 'c2': 56, 'c3': 134, 'c4': 255, 'c5': 192, 'c6': 205}}
+            </p>
+            <hr>
+            <p>
+                Use these formats when entering data manually or uploading a CSV file.
+            </p>
+        </section>
+
+
+        <hr>
+            <!-- Regular user input -->
+            <div class="form-container">
+                <h2>Enter Data Manually</h2>
+                <form method="post" action="/submit">
+                    <div class="form-group">
+                        <label for="agent_capacities">Agent Capacities:</label><br>
+                        <textarea id="agent_capacities" name="agent_capacities" rows="3" required>{"Ami": 2, "Tami": 2, "Rami": 2}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="item_capacities">Item Capacities:</label><br>
+                        <textarea id="item_capacities" name="item_capacities" rows="3" required>{"Fork": 2, "Knife": 2, "Pen": 2}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="valuations">Valuations:</label><br>
+                        <textarea id="valuations" name="valuations" rows="5" required>{"Ami": {"Fork": 2, "Knife": 0, "Pen": 0}, "Rami": {"Fork": 0, "Knife": 1, "Pen": 1}, "Tami": {"Fork": 0, "Knife": 1, "Pen": 1}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+            <!--  Form for uploading CSV file  -->
+        <div class="form-container">
+            <h2>Upload CSV File</h2>
+            <form method="post" action="/upload" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="csv_file" class="file-input">
+                        Choose CSV File
+                        <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btn-lg">Upload CSV</button>
+                </div>
+            </form>
+
+          <!-- Link to view CSV format example -->
+          <p class="link">Not sure how to format your CSV? <a href="https://docs.google.com/spreadsheets/d/1AhAfQLwhV864Y9FgyTuG3qrpuyASM4Nnph-JUaIwjqk/edit?usp=sharing" target="_blank">View CSV Format Example</a></p>
+        </div>
+
+        <hr>
+
+        <h3 class="description">Description of the Algorithm</h3>
+        <p class="description">
+            The algorithm addresses computational challenges in fair allocation
+            by seeking envy-free solutions and refining the solution space with constraints.
+            It ensures each agent prefers their own bundle and optimizes social welfare
+            without revisiting previous solutions, employing linear programming for constraint enforcement.
+        </p>
+
+
+        <hr>
+
+        <h3 class="authors">Programmers</h3>
+        <p class="authors">
+            The programmers of the code for this algorithm are: <br> <br>
+            - <a>Elor Israeli</a> <br>
+            - <a>Naor Ladani</a> <br>
+        </p>
+
+        <hr>
+
+        <h3 class="authors">Authors of the Paper</h3>
+        <p class="authors">
+            The authors of the paper are: <br> <br>
+        - <a>Robert Bredereck</a> <br>
+        - <a>Aleksander Figiel</a> <br>
+        - <a>Andrzej Kaczmarczyk</a> <br>
+        - <a>Dušan Knop</a> <br>
+        - <a>Rolf Niedermeier</a> <br>
+        </p>
+
+        <hr>
+
+        <h3 class="link">Link to the Research Paper</h3>
+        <p class="link">
+            The paper can be found <a href="https://www.ifaamas.org/Proceedings/aamas2021/pdfs/p260.pdf" target="_blank">here</a>.
+        </p>
+
+        <!-- Author section -->
+        <footer class="author-section">
+            <hr>
+            <p class="author">Feel free to contact us</p>
+            <p class="author-description"><a href="mailto:elorisraeli@gmail.com">elorisraeli@gmail.com</a></p>
+            <p class="author-description"><a href="mailto:naorman12@gmail.com">naorman12@gmail.com</a></p>
+            <!-- Link to the algorithm implementation -->
+            <p class="author">The link below should be modified to the correct link</p>
+            <p class="author-description">Check out the <a href="" target="_blank">Algorithm Implementation</a></p>
+        </footer>
+    </div>
+</body>
+</html>

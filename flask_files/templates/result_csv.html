@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV File Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>CSV File Result</h2>
+        <div class="result">
+            {% for row in output_csv %}
+                <h3>Agent Capacities:</h3>
+                <pre>{{ row['agent_capacities'] }}</pre>
+                <h3>Item Capacities:</h3>
+                <pre>{{ row['item_capacities'] }}</pre>
+                <h3>Valuations:</h3>
+                <pre>{{ row['valuations'] }}</pre>
+                <h3>Allocation:</h3>
+                <pre>{{ row['allocation'] }}</pre>
+                <hr>
+            {% endfor %}
+        </div>
+
+        <!-- Explanation of the Algorithm -->
+        <div class="explanation">
+            <h3>Explanation of Allocation Process</h3>
+            <p>The allocation process ensures that the result is envy-free and Pareto optimal for the given input.</p>
+            <p>Steps involved:</p>
+            <ul>
+                <li>Find an envy-free allocation.</li>
+                <li>Check for a Pareto dominating allocation.</li>
+                <li>If no Pareto dominating allocation exists, finalize the current allocation.</li>
+                <li>Repeat the process until a Pareto optimal allocation is found or no allocation exists.</li>
+            </ul>
+            <p>The resulting allocation is the best result for the given input, ensuring both envy-freeness and Pareto optimality.</p>
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+            <a href="{{ url_for('download') }}" class="btn btn-primary">Download Output CSV</a>
+            <a href="/" class="btn btn-secondary">Return Home</a>
+        </div>
+    </div>
+</body>
+</html>

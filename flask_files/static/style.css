@@ -1,0 +1,237 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.main-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-title h1 {
+    font-size: 2.5em;
+    color: #343a40;
+}
+
+.main-title h2 {
+    font-size: 1.5em;
+    color: #6c757d;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.result {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.result p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.result pre {
+    white-space: pre-wrap; /* Ensures text wraps correctly */
+    margin-bottom: 10px;
+}
+
+.explanation {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.explanation h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.explanation p {
+    margin-bottom: 10px;
+}
+
+pre {
+    white-space: pre-wrap; /* Ensures text wraps correctly */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border: 1px solid #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade of primary color on hover */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border: 1px solid #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Darker shade of secondary color on hover */
+}
+
+.btn-sm-left {
+    margin-right: 10px;
+}
+
+.btn-lg {
+    padding: 15px 25px;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.authors {
+    margin-bottom: 20px;
+}
+
+.link {
+    margin-bottom: 20px;
+}
+
+.file-input {
+    position: relative;
+    overflow: hidden;
+    background-color: #007bff; /* Match primary button color */
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.file-input:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.file-input input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.author-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.author {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.author-description {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+.instructions {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.instructions h2, .instructions h3 {
+    color: #343a40;
+}
+
+.instructions p {
+    color: #6c757d;
+    font-size: 1em;
+}
+
+.instructions pre {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9em;
+}

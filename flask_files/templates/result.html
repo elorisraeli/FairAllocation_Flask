@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Algorithm Result</h2>
+
+        <h3>Agent Capacities:</h3>
+        <pre>{{ result.agent_capacities }}</pre>
+        <h3>Item Capacities:</h3>
+        <pre>{{ result.item_capacities }}</pre>
+        <h3>Valuations:</h3>
+        <pre>{{ result.valuations }}</pre>
+
+        <div class="result">
+            <p>Assignments:</p>
+            <pre>{{ result.allocation }}</pre>
+        </div>
+
+        <!-- Explanation of the Algorithm -->
+        <div class="explanation">
+            <h3>Explanation of Allocation Algorithm</h3>
+            <p>The allocation algorithm aims to distribute items among agents based on their capacities and valuations while maximizing the total valuation.</p>
+            <p>The allocation process is as follows:</p>
+            <ul>
+                <li>Each agent has a specified capacity, which indicates the number of items they can hold.</li>
+                <li>Each item also has a specified capacity, indicating how many agents can hold that item.</li>
+                <li>Valuations represent the preference or value each agent has for each item.</li>
+                <li>The algorithm assigns items to agents in a way that maximizes the total valuation while respecting the capacities of both agents and items.</li>
+            </ul>
+            <p>The total valuation is calculated by summing up the valuations of the assigned items for each agent:</p>
+            <ul>
+                <li>For each assignment, the value from the valuations dictionary corresponding to the agent and item pair is added.</li>
+                <li>This sum represents the total valuation of the allocations.</li>
+            </ul>
+            <p>This result represents the best possible allocation for the given input, ensuring that it is both envy-free and Pareto optimal:</p>
+            <ul>
+                <li>Envy-free: No agent prefers the allocation of another agent over their own allocation.</li>
+                <li>Pareto optimal: There is no other allocation that could make at least one agent better off without making another agent worse off.</li>
+            </ul>
+        </div>
+
+
+        <!-- Return Home Button -->
+        <div class="button-container">
+            <a href="/" class="btn btn-secondary btn-lg">Return Home</a>
+        </div>
+    </div>
+</body>
+</html>
