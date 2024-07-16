@@ -56,17 +56,16 @@ def submit():
                     "agent_capacities": agent_capacities,
                     "item_capacities": item_capacities,
                     "valuations": valuations,
-                    # "allocation": allocation
-                    "allocation": None  # just now for the code to run
+                    "allocation": allocation
                 }
 
                 return render_template('result.html', result=result)
 
             except Exception as e:
-                return render_template('input.html', error_message='Error processing input data: {}'.format(str(e)))
+                return render_template('result.html', error_message='Error processing result data: {}'.format(str(e)))
 
         else:
-            return render_template('input.html', error_message='Please provide all required fields')
+            return render_template('result.html', error_message='Please provide all required fields')
 
 
 @app.route('/upload', methods=['POST'])
